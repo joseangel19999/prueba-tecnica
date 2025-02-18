@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <h1>Adminstracion de empleados</h1>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav [mode]="'side'" [opened]="'true'">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>people</mat-icon>
+          <div class="ms-4 d-flex flex-column">
+            <span class="fw-semibold">Catalogos de Empleadoss</span>
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        @for(item of submenuListEquipos;track item){
+        <a mat-list-item [routerLink]="[item.url]" routerLinkActive="active" (click)="navegation(item.url)">
+          <small>{{item.nombre}}</small>
+        </a>
+        }
+      </mat-nav-list>
+    </mat-expansion-panel>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,30 @@
+
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+/target/
+
+# Angular Compilación y node
+src/main/frontend/proyecto-prueba/node/node_modules/
+/src/main/frontend/proyecto-prueba/node_modules/
+/src/main/frontend/proyecto-prueba/prueba-app/
+/src/main/frontend/proyecto-prueba/.angular/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/

@@ -1,0 +1,75 @@
+<div class="contenedor">
+  <mat-card >
+    <mat-card-content>
+      <form class="content_formulario" [formGroup]="formEmpleado">
+       <mat-form-field>
+          <mat-label>Nombre</mat-label>
+          <input matInput type="text" formControlName="nombre">
+          @if (formEmpleado.get('nombre')?.invalid && formEmpleado.get('nombre')?.touched &&
+          formEmpleado.get('nombre')?.errors?.['required']) {
+          <mat-error >Nombre es obligatorio</mat-error>
+        }
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Apellido Paterno</mat-label>
+          <input matInput type="text" formControlName="apellidoPaterno">
+          @if (formEmpleado.get('apellidoPaterno')?.invalid && formEmpleado.get('apellidoPaterno')?.touched &&
+          formEmpleado.get('apellidoPaterno')?.errors?.['required']) {
+          <mat-error >Apellido paterno es requerido</mat-error>
+        }
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Apellido Materno</mat-label>
+          <input matInput type="text" formControlName="apellidoMaterno">
+          @if (formEmpleado.get('apellidoMaterno')?.invalid && formEmpleado.get('apellidoMaterno')?.touched &&
+          formEmpleado.get('apellidoMaterno')?.errors?.['required']) {
+          <mat-error >Apellido materno es requerido</mat-error>
+        }
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Curp</mat-label>
+          <input matInput type="text" formControlName="curp" style="text-transform: uppercase;">
+          @if (formEmpleado.get('curp')?.invalid && formEmpleado.get('curp')?.touched &&
+          formEmpleado.get('curp')?.errors?.['required']) {
+          <mat-error >Curp es requerido</mat-error>
+        }
+          @if (formEmpleado.get('curp')?.invalid && formEmpleado.get('curp')?.touched &&
+          formEmpleado.get('curp')?.errors?.['curpInvalido']) {
+          <mat-error >Curp invalido</mat-error>
+        }
+        </mat-form-field>
+        <div class="content_col_two">
+          <mat-form-field>
+            <mat-label>Teelefono</mat-label>
+            <input matInput type="text" formControlName="telefono">
+            @if (formEmpleado.get('telefono')?.invalid && formEmpleado.get('telefono')?.touched &&
+            formEmpleado.get('telefono')?.errors?.['required']) {
+            <mat-error >Numero telefono es requerido</mat-error>
+          }
+            @if (formEmpleado.get('telefono')?.invalid && formEmpleado.get('telefono')?.touched &&
+            formEmpleado.get('telefono')?.errors?.['numeroInvalido']) {
+            <mat-error >Debe ser formato numerico y debe tener 10 digitos</mat-error>
+          }
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Sexo</mat-label>
+            <mat-select formControlName="sexo" >
+              @for (sexo of sexo; track sexo) {
+                <mat-option  [value]="sexo.id">{{sexo.nombre}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="content_bottons">
+          @if(optionValue.option=='1'){
+            <button [disabled]="formEmpleado.invalid" mat-raised-button color="primary" (click)="save()">Guardar</button>
+          }
+          @if (optionValue.option=='2') {
+            <button [disabled]="formEmpleado.invalid" mat-raised-button color="primary" (click)="update()">Actualizar</button>
+          }
+          <button mat-raised-button color="secundary" (click)="close()">Cerrar</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
