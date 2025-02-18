@@ -37,7 +37,7 @@ interface Sexo {
 })
 export class RegistroComponent {
   private messageTilteOprationSucces = "Operacion Exitoso";
-  private statusResponse = "1";
+  private statusResponse:number = 1;
   private statusOperationUpate = "2";
   sexo: Sexo[] = [
     { id: "1", nombre: 'Hombre' },

@@ -7,7 +7,7 @@ import { ListadoComponent } from './pages/empleado/components/listado/listado.co
 export const routes: Routes = [
 
   {
-    path: 'home',
+    path: '',
     title: 'Control de empleados | Home',
     component: DashboardComponent,
     children:[

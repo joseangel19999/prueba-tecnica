@@ -13,7 +13,7 @@ import org.springframework.web.filter.CorsFilter;
 public class ApplicationConfig {
 	
 	public final String[] DEFAULT_URL = { "/**"};
-	public final String[] WHITE_LIST_URL_FRONT_ACCESS= {"http://localhost:4200"};
+	public final String[] WHITE_LIST_URL_FRONT_ACCESS= {"http://localhost:4200","http://localhost:9085"};
 	public final String AUTHORIZATION="Authorization";
 	public final String CONTENT_TYPE="Content-Type";
 	public final String[] PETITION_METHOD= {"GET", "POST", "PUT", "DELETE","OPTIONS"}; 

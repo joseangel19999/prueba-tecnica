@@ -40,7 +40,8 @@ ejecutar en consola
 mvn liberty:run
 
 #Url de recurso frontend
-http://localhost:9085/prueba-app/home
+http://localhost:9085/prueba-app/
+
 
 #Url de recurso de backend
 registrar

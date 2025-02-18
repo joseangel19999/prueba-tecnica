@@ -45,7 +45,7 @@ export class DashboardComponent {
 
   llenarMenuList(){
     this.submenuListEquipos=[
-      {id:2,nombre:"Listado de empleado",url:"/home/empleado-listado"}
+      {id:2,nombre:"Listado de empleado",url:"empleado-listado"},
     ]
   }
 

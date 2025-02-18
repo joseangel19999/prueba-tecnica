@@ -41,7 +41,7 @@ export class ListadoComponent implements AfterViewInit {
   private autoSize: string = "auto";
   private optionValueRegister = "1";
   private optionValueUpdate = "2";
-  private statusRequestSucces: string = "1";
+  private statusRequestSucces:number = 1;
   private valueEmptyRegisterEmpelado = "0";
   private messageTilteOprationSucces = "Operacion Exitoso";
   private value_botom_delete = "Eliminar";
@@ -59,7 +59,7 @@ export class ListadoComponent implements AfterViewInit {
 
   obtenerEmpleados() {
     this.empleadoService.getEmpleados().subscribe((response: ResponseReqeust) => {
-      if (response.statusCode == this.statusRequestSucces && response.info.length > 0) {
+      if (response.statusCode == this.statusRequestSucces) {
         this.empleados = response.info;
         this.dataSource = new MatTableDataSource<EmpleadoModel>(this.empleados);
       }
